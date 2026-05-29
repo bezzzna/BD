@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База данных КГАНОУ РЦ "Сириус.Приморье"</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>База данных КГАНОУ РЦ "Сириус.Приморье"</h1>
+    <p>Добро пожаловать в базу данных КГАНОУ РЦ "Сириус.Приморье"</p>
+    <p>Здесь вы можете найти информацию об участниках программ</p>
+
+    <div class="buttons">
+        <button type="button" class="active" data-table="participants">Участники программ</button>
+        <button type="button" data-table="programs">Программы</button>
+        <button type="button" data-table="events">Мероприятия</button>
+    </div>
+
+    <p id="status" class="status" aria-live="polite"></p>
+
+    <div class="bd_tables">
+        <section class="bd_table active" id="participants">
+            <h2>Участники программ</h2>
+            <div class="filters" id="participants-filters">
+                <input id="participants-search" type="search" placeholder="Поиск: ФИО, школа, город, email, телефон">
+                <input id="participants-program-search" type="search" placeholder="Фильтр по названию программы">
+                <select id="participants-count-filter">
+                    <option value="1">Участвовал минимум в 1 программе</option>
+                    <option value="2">Участвовал минимум в 2 программах</option>
+                    <option value="3">Участвовал минимум в 3 программах</option>
+                </select>
+            </div>
+            <p class="filters-meta" id="participants-meta"></p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>ФИО</th>
+                            <th>Программы</th>
+                            <th>Дата рождения</th>
+                            <th>Класс</th>
+                            <th>Школа</th>
+                            <th>Город</th>
+                            <th>Телефон</th>
+                            <th>Контакт родителя</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bd_table" id="programs">
+            <h2>Программы</h2>
+            <div class="filters" id="programs-filters">
+                <input id="programs-search" type="search" placeholder="Поиск: название, направление, формат">
+                <input id="programs-participant-search" type="search" placeholder="Фильтр по участнику (ФИО)">
+                <select id="programs-count-filter">
+                    <option value="0">Любое кол-во участников</option>
+                    <option value="1">Минимум 1 участник</option>
+                    <option value="5">Минимум 5 участников</option>
+                    <option value="10">Минимум 10 участников</option>
+                </select>
+            </div>
+            <p class="filters-meta" id="programs-meta"></p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Название</th>
+                            <th>Направление</th>
+                            <th>Дата начала</th>
+                            <th>Дата окончания</th>
+                            <th>Кол-во участников</th>
+                            <th>Формат</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bd_table" id="events">
+            <h2>Мероприятия</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Название</th>
+                            <th>Дата</th>
+                            <th>Программа</th>
+                            <th>Место</th>
+                            <th>Участников</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
